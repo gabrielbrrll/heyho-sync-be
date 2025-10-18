@@ -14,6 +14,7 @@ RUN apt-get update -qq && apt-get install -y --no-install-recommends \
     git \
     libpq-dev \
     postgresql-client \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
