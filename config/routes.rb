@@ -16,6 +16,15 @@ Rails.application.routes.draw do
 
       # Data sync endpoints
       post 'data/sync', to: 'data_sync#create'
+
+      # Browsing data endpoints (for fetching synced data)
+      get 'browsing_data', to: 'browsing_data#index'
+      get 'browsing_data/summary', to: 'browsing_data#summary'
+
+      # Insights endpoints
+      get 'insights/daily_summary', to: 'insights#daily_summary'
+      get 'insights/top_sites', to: 'insights#top_sites'
+      get 'insights/recent_activity', to: 'insights#recent_activity'
     end
   end
 

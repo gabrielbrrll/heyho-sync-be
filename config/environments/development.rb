@@ -72,4 +72,7 @@ Rails.application.configure do
   config.hosts << "127.0.0.1"
   config.hosts << /.*\.local/
   config.hosts << /.*\.ngrok\.io/
+  # Allow Docker internal network hosts
+  config.hosts << "sync-api"
+  config.hosts << "syrupy-api"
 end

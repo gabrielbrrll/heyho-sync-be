@@ -10,6 +10,10 @@ class User < ApplicationRecord
   # has_many :jwt_denylists, dependent: :destroy
   # has_many :refresh_tokens, dependent: :destroy
 
+  # Browsing data associations
+  has_many :page_visits, dependent: :destroy
+  has_many :tab_aggregates, through: :page_visits
+
   # Validations
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :first_name, presence: true, allow_blank: false
